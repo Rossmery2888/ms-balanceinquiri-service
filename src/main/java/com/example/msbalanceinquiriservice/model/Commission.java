@@ -4,14 +4,18 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Data
-@Document(collection = "balances")
-public class Balance {
+@Document(collection = "commissions")
+public class Commission {
     @Id
     private String id;
     private String customerId;
     private String productId;
-    private String productType; // SAVINGS_ACCOUNT, CHECKING_ACCOUNT, FIXED_TERM, CREDIT_CARD
-    private Double availableBalance;
-    private Double currentBalance;
+    private String productType;
+    private BigDecimal amount;
+    private String description;
+    private LocalDateTime date;
 }
